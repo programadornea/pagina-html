@@ -8,19 +8,19 @@
     <title>BOREALCODE - TIENDA DE ROPA</title>
     <link rel="icon" type="image/x-icon" href="Imagenes/BC.ico">
     <link rel="stylesheet" href="./background-image.css">
+
     <style>
         body {
-            background-color: #6f7580;
-        }
-
-        .background-section {
-            background-image: url(imagenes/BOREAL.jpg);
+            background-image: url(imagenes/Boreal.gif);
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            height: 400px;
-            padding: 20px;
-            color: black;
+            min-height: 100vh; /* Asegura que cubra al menos la altura de la ventana */
+            color: white; /* Cambia el color del texto si es necesario */
+        }
+
+        .header {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para el texto */
         }
 
         .card {
@@ -40,6 +40,11 @@
             background: rgba(173, 173, 173, 0.05);
         }
 
+        .card .card-title,
+        .card .card-text {
+            color: black; /* Cambia el color del texto a negro */
+        }
+
         .social-card {
             display: flex;
             align-items: center;
@@ -54,7 +59,7 @@
             height: 60px;
             width: 60px;
             border-radius: 100%;
-            color: rgb(255, 174, 0);
+            color: rgb(255, 255, 255);
             fill: currentColor;
             box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
         }
@@ -64,7 +69,7 @@
             border-radius: 5px;
             padding: 5px;
             transition: all 0.3s;
-            color: rgb(255, 174, 0);
+            color: rgb(255, 255, 255);
             background-color: rgba(255, 255, 255, 0.3);
             position: absolute;
             z-index: 9999;
@@ -87,74 +92,77 @@
 </head>
 
 <body>
-    <header class="bg-secondary text-dark text-center py-4">
+    <header class="header text-light text-center py-4">
         <div class="container-fluid">
             <h4>BOREALCODE</h4>
 
-            <nav class="bg-secondary text-dark text-start">
-                <a href="#sale" class="text-dark mx-3">Sale</a>
-                <a href="#pre-order" class="text-dark mx-3">Pre-order</a>
-                <a href="#about" class="text-dark mx-3">About</a>
-                <a href="#contact" class="text-dark mx-3">Contact</a>
+            <nav class="text-light text-start">
+                <a href="#sale" class="text-light mx-3">Sale</a>
+                <a href="#pre-order" class="text-light mx-3">Pre-order</a>
+                <a href="#about" class="text-light mx-3">About</a>
+                <a href="#contact" class="text-light mx-3">Contact</a>
             </nav>
         </div>
     </header>
 
-    <div class="bg-secondary text-dark text-center py-5">
+    <div class="text-center py-5">
         <div class="container-fluid">
             <h1 class="custom-gray">NEW COLLECTION</h1>
         </div>
     </div>
 
-    <section>
-        <div class="bg-secondary d-flex justify-content-center">
-            <div class="d-flex flex-wrap justify-content-center" style="max-width: 1200px;">
-
-                <!-- Tarjetas -->
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="imagenes/Camiseta Box Fit Legend - Blanca - S.jpg" alt="Camiseta blanca oversize">
-                    <div class="card-body">
-                        <h4 class="card-title">Camiseta blanca oversize</h4>
-                        <p class="card-text">Camiseta de alta calidad en algodón.</p>
-                        <p class="card-text">75.000$</p>
-                        <a href="#" class="btn btn-dark">Ver más</a>
-                    </div>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center" style="max-width: 1200px;">
+            <!-- Tarjetas -->
+            <div class="card">
+                <img class="card-img-top img-fluid" src="imagenes/Camiseta Box Fit Legend - Blanca - S.jpg" alt="Camiseta blanca oversize">
+                <div class="card-body">
+                    <h4 class="card-title">Camiseta blanca oversize</h4>
+                    <p class="card-text">Camiseta de alta calidad en algodón.</p>
+                    <p class="card-text">75.000$</p>
+                    <a href="#" class="btn btn-dark">Ver más</a>
                 </div>
+            </div>
 
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="imagenes/maleoversizedtshirt.jpg" alt="Camiseta verde oversize">
-                    <div class="card-body">
-                        <h4 class="card-title">Camiseta verde oversize</h4>
-                        <p class="card-text">Camiseta de algodón de la más alta calidad.</p>
-                        <p class="card-text">75.000$</p>
-                        <a href="#" class="btn btn-dark">Ver más</a>
-                    </div>
+            <div class="card">
+                <img class="card-img-top img-fluid" src="imagenes/maleoversizedtshirt.jpg" alt="Camiseta verde oversize">
+                <div class="card-body">
+                    <h4 class="card-title">Camiseta verde oversize</h4>
+                    <p class="card-text">Camiseta de algodón de la más alta calidad.</p>
+                    <p class="card-text">75.000$</p>
+                    <a href="#" class="btn btn-dark">Ver más</a>
                 </div>
+            </div>
 
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="imagenes/Topman Clothing, Shoes & Accessories _ ASOS.jpg" alt="Camiseta Negra oversize">
-                    <div class="card-body">
-                        <h4 class="card-title">Camiseta Negra oversize</h4>
-                        <p class="card-text">Camiseta de alta calidad en algodón.</p>
-                        <p class="card-text">70.000$</p>
-                        <a href="#" class="btn btn-dark">Ver más</a>
-                    </div>
+            <div class="card">
+                <img class="card-img-top img-fluid" src="imagenes/Topman Clothing, Shoes & Accessories _ ASOS.jpg" alt="Camiseta Negra oversize">
+                <div class="card-body">
+                    <h4 class="card-title">Camiseta Negra oversize</h4>
+                    <p class="card-text">Camiseta de alta calidad en algodón.</p>
+                    <p class="card-text">70.000$</p>
+                    <a href="#" class="btn btn-dark">Ver más</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="social-card">
-            <div class="iso-pro">
-                <a href="https://www.facebook.com" target="_blank">
-                    <svg class="svg" viewBox="0 0 24 24">
-                        <path d="M22.675 0h-21.35C.601 0 0 .601 0 1.325v21.35C0 23.399.601 24 1.325 24h21.35C23.399 24 24 23.399 24 22.675V1.325C24 .601 23.399 0 22.675 0zm-3.05 12.163h-3.654v9.223h-4.055v-9.223h-2.79V8.653h2.79V6.566c0-3.325 1.919-5.142 4.822-5.142 1.42 0 2.638.105 2.995.151v3.472h-2.002c-1.571 0-1.88.747-1.88 1.835v2.402h3.754l-.489 3.51z"></path>
-                    </svg>
-                    <span class="text">Facebook</span>
-                </a>
-            </div>
-            <div class="iso-pro">
-                <a href="https://www.instagram.com" target="_blank">
-                    <svg class="svg" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.206 0 3.588.012 4.845.07 1.313.063 2.002.276 2.46.459a4.92 4.92 0 0 1 1.796 1.796c.183.458.396 1.147.459 2.46.058 1.257.07 1.639.07 4.845s-.012 3.588-.07 4.845c-.063 1.313-.276"
-
-            
+    <div class="social-card">
+        <div class="iso-pro">
+            <a href="https://www.facebook.com" target="_blank">
+                <svg class="svg" viewBox="0 0 24 24">
+                    <path d="M22.675 0h-21.35C.601 0 0 .601 0 1.325v21.35C0 23.399.601 24 1.325 24h21.35C23.399 24 24 23.399 24 22.675V1.325C24 .601 23.399 0 22.675 0zm-3.05 12.163h-3.654v9.223h-4.055v-9.223h-2.79V8.653h2.79V6.566c0-3.325 1.919-5.142 4.822-5.142 1.42 0 2.638.105 2.995.151v3.472h-2.002c-1.571 0-1.88.747-1.88 1.835v2.402h3.754l-.489 3.51z"></path>
+                </svg>
+                <span class="text">Facebook</span>
+            </a>
+        </div>
+        <div class="iso-pro">
+            <a href="https://www.instagram.com" target="_blank">
+                <svg class="svg" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.206 0 3.588.012 4.845.07 1.313.063 2.002.276 2.46.459a4.92 4.92 0 0 1 1.796 1.796c.183.458.396 1.147.459 2.46.058 1.257.07 1.639.07 4.845s-.012 3.588-.07 4.845c-.063 1.313-.276"></path>
+                </svg>
+                <span class="text">Instagram</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
