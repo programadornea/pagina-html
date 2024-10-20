@@ -10,139 +10,85 @@
     <link rel="stylesheet" href="./background-image.css">
     <style>
         body {
-    background-color: #6f7580; /* Un tono de gris claro */
-}
-         
-        /* Imagen de fondo solo en una sección */
-
- /* Imagen de fondo solo en una sección */
-
- .background-section {
-    background-image: url(imagenes/BOREAL.jpg); /* Ruta de tu imagen */
-    background-size: cover; /* Para que la imagen cubra todo el div */
-    background-position: center center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que se repita */
-    height: 400px; /* Ajusta la altura de la sección */
-    padding: 20px; /* Espaciado interno para los elementos */
-    color: black; /* Color del texto sobre la imagen */
-}
-       
-
-        .d-flex {
-            gap: 10px; /* Espacio más pequeño entre las tarjetas */
+            background-color: #6f7580;
         }
 
+        .background-section {
+            background-image: url(imagenes/BOREAL.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 400px;
+            padding: 20px;
+            color: black;
+        }
 
-        /* Ajuste de margen inferior */
         .card {
-            margin-bottom: 20px;
-        }
-        /* Animación jello */
-        @keyframes jello-horizontal {
-            0% {
-                transform: scale3d(1, 1, 1);
-            }
-
-            30% {
-                transform: scale3d(1.25, 0.75, 1);
-            }
-
-            40% {
-                transform: scale3d(0.75, 1.25, 1);
-            }
-
-            50% {
-                transform: scale3d(1.15, 0.85, 1);
-            }
-
-            65% {
-                transform: scale3d(0.95, 1.05, 1);
-            }
-
-            75% {
-                transform: scale3d(1.05, 0.95, 1);
-            }
-
-            100% {
-                transform: scale3d(1, 1, 1);
-            }
+            max-width: 300px;
+            margin: 15px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(15px);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.192), inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+            transition: 0.5s;
         }
 
-        /* Aplica la animación cuando se hace hover sobre las tarjetas */
         .card:hover {
-            animation: jello-horizontal 1s ease;
+            background: rgba(173, 173, 173, 0.05);
         }
 
-        /* Estilos responsivos */
-        @media (max-width: 400px) {
-            .card {
-                width: 100px;
-            }
-
-            h4 {
-                font-size: 1rem;
-            }
-
-            .card img {
-                scale: 50%;
-            }
-
-            .btn {
-                font-size: 0.8rem;
-            }
+        .social-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 25px;
         }
 
-        @media (max-width: 700px) {
-            .card {
-                width: 150px;
-            }
-
-            h4 {
-                font-size: 1.2rem;
-            }
-
-            .btn {
-                font-size: 1rem;
-            }
+        .svg {
+            transition: all 0.3s;
+            padding: 1rem;
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            color: rgb(255, 174, 0);
+            fill: currentColor;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
         }
 
-        @media (min-width: 1000px) {
-            .card {
-                width: 250px;
-            }
-
-            h4 {
-                font-size: 1.6rem;
-            }
-
-            .btn {
-                font-size: 1.2rem;
-            }
+        .text {
+            opacity: 0;
+            border-radius: 5px;
+            padding: 5px;
+            transition: all 0.3s;
+            color: rgb(255, 174, 0);
+            background-color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            z-index: 9999;
         }
 
-        @media (min-width: 1800px) {
-            .card {
-                width: 350px;
-            }
+        .iso-pro {
+            transition: 0.5s;
+            position: relative;
+        }
 
-            h4 {
-                font-size: 2rem;
-            }
+        .iso-pro:hover .svg {
+            transform: translate(5px, -5px);
+        }
 
-            .btn {
-                font-size: 1.5rem;
-            
-            }
-            .custom-gray {
-        color: #6c757d; /* Gris personalizado (puedes ajustar el valor hexadecimal) */
-    }
-        }   
+        .iso-pro:hover .text {
+            opacity: 1;
+            transform: translate(25px, -2px) skew(-5deg);
+        }
     </style>
 </head>
 
 <body>
-    <header class="bg-secondary text-dark text-center py-6">
-        <div class="container">
+    <header class="bg-secondary text-dark text-center py-4">
+        <div class="container-fluid">
             <h4>BOREALCODE</h4>
 
             <nav class="bg-secondary text-dark text-start">
@@ -152,64 +98,63 @@
                 <a href="#contact" class="text-dark mx-3">Contact</a>
             </nav>
         </div>
-
     </header>
 
     <div class="bg-secondary text-dark text-center py-5">
-        <div class="container">
+        <div class="container-fluid">
             <h1 class="custom-gray">NEW COLLECTION</h1>
         </div>
     </div>
-        
 
-    <!-- Sección de productos -->
     <section>
         <div class="bg-secondary d-flex justify-content-center">
-            <div class="d-flex justify-content-between" style="width: 70%;">
+            <div class="d-flex flex-wrap justify-content-center" style="max-width: 1200px;">
 
-                <!-- Primera tarjeta -->
-                <div class="card" style="width: 200px; background-color: #6f7580;">
-                    <img class="card-img-bor" src="imagenes/Camiseta Box Fit Legend - Blanca - S.jpg" alt="card image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
+                <!-- Tarjetas -->
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="imagenes/Camiseta Box Fit Legend - Blanca - S.jpg" alt="Camiseta blanca oversize">
                     <div class="card-body">
                         <h4 class="card-title">Camiseta blanca oversize</h4>
                         <p class="card-text">Camiseta de alta calidad en algodón.</p>
-                        <p class ="card-text"> 75.000$ </p>
+                        <p class="card-text">75.000$</p>
                         <a href="#" class="btn btn-dark">Ver más</a>
                     </div>
                 </div>
 
-                <!-- Segunda tarjeta (en el centro) -->
-                <div class="card mx-auto" style="width: 200px;background-color: #6f7580;">
-                    <img class="card-img-bor" src="imagenes/maleoversizedtshirt.jpg" alt="card-image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="imagenes/maleoversizedtshirt.jpg" alt="Camiseta verde oversize">
                     <div class="card-body">
                         <h4 class="card-title">Camiseta verde oversize</h4>
                         <p class="card-text">Camiseta de algodón de la más alta calidad.</p>
-                        <p class ="card-text"> 75.000$ </p>
+                        <p class="card-text">75.000$</p>
                         <a href="#" class="btn btn-dark">Ver más</a>
                     </div>
                 </div>
 
-                <!-- Tercera tarjeta -->
-                <div class="card" style="width: 200px; background-color: #6f7580;">
-                    <img class="card-img-bor" src="imagenes/Topman Clothing, Shoes & Accessories _ ASOS.jpg" alt="card image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="imagenes/Topman Clothing, Shoes & Accessories _ ASOS.jpg" alt="Camiseta Negra oversize">
                     <div class="card-body">
                         <h4 class="card-title">Camiseta Negra oversize</h4>
                         <p class="card-text">Camiseta de alta calidad en algodón.</p>
-                        <p class ="card-text"> 70.000$ </p>
+                        <p class="card-text">70.000$</p>
                         <a href="#" class="btn btn-dark">Ver más</a>
                     </div>
                 </div>
-
             </div>
         </div>
-    </section>
 
-    <!-- Se enlaza el archivo js al html -->
-    <script src="nebulosa.js"></script>
+        <div class="social-card">
+            <div class="iso-pro">
+                <a href="https://www.facebook.com" target="_blank">
+                    <svg class="svg" viewBox="0 0 24 24">
+                        <path d="M22.675 0h-21.35C.601 0 0 .601 0 1.325v21.35C0 23.399.601 24 1.325 24h21.35C23.399 24 24 23.399 24 22.675V1.325C24 .601 23.399 0 22.675 0zm-3.05 12.163h-3.654v9.223h-4.055v-9.223h-2.79V8.653h2.79V6.566c0-3.325 1.919-5.142 4.822-5.142 1.42 0 2.638.105 2.995.151v3.472h-2.002c-1.571 0-1.88.747-1.88 1.835v2.402h3.754l-.489 3.51z"></path>
+                    </svg>
+                    <span class="text">Facebook</span>
+                </a>
+            </div>
+            <div class="iso-pro">
+                <a href="https://www.instagram.com" target="_blank">
+                    <svg class="svg" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.206 0 3.588.012 4.845.07 1.313.063 2.002.276 2.46.459a4.92 4.92 0 0 1 1.796 1.796c.183.458.396 1.147.459 2.46.058 1.257.07 1.639.07 4.845s-.012 3.588-.07 4.845c-.063 1.313-.276"
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
-
-</html>
+            
