@@ -28,121 +28,44 @@
 }
        
 
-        .d-flex {
-            gap: 10px; /* Espacio más pequeño entre las tarjetas */
-        }
+        
 
 
         /* Ajuste de margen inferior */
         .card {
             margin-bottom: 20px;
         }
-        /* Animación jello */
-        @keyframes jello-horizontal {
-            0% {
-                transform: scale3d(1, 1, 1);
-            }
-
-            30% {
-                transform: scale3d(1.25, 0.75, 1);
-            }
-
-            40% {
-                transform: scale3d(0.75, 1.25, 1);
-            }
-
-            50% {
-                transform: scale3d(1.15, 0.85, 1);
-            }
-
-            65% {
-                transform: scale3d(0.95, 1.05, 1);
-            }
-
-            75% {
-                transform: scale3d(1.05, 0.95, 1);
-            }
-
-            100% {
-                transform: scale3d(1, 1, 1);
-            }
+       
+        .card {
+            max-width: 300px;
+            margin: 15px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(15px);
+            box-shadow: inset 0 0 20px rgb(221, 216, 216), inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+            transition: 0.5s;
         }
 
-        /* Aplica la animación cuando se hace hover sobre las tarjetas */
         .card:hover {
-            animation: jello-horizontal 1s ease;
+            background: rgba(173, 173, 173, 0.05);
         }
 
-        /* Estilos responsivos */
-        @media (max-width: 400px) {
-            .card {
-                width: 100px;
-            }
-
-            h4 {
-                font-size: 1rem;
-            }
-
-            .card img {
-                scale: 50%;
-            }
-
-            .btn {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .card {
-                width: 150px;
-            }
-
-            h4 {
-                font-size: 1.2rem;
-            }
-
-            .btn {
-                font-size: 1rem;
-            }
-        }
-
-        @media (min-width: 1000px) {
-            .card {
-                width: 250px;
-            }
-
-            h4 {
-                font-size: 1.6rem;
-            }
-
-            .btn {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (min-width: 1800px) {
-            .card {
-                width: 350px;
-            }
-
-            h4 {
-                font-size: 2rem;
-            }
-
-            .btn {
-                font-size: 1.5rem;
-            
-            }
+       
             .custom-gray {
         color: #6c757d; /* Gris personalizado (puedes ajustar el valor hexadecimal) */
     }
-        }   
+          
     </style>
 </head>
 
 <body>
     <header class="bg-secondary text-dark text-center py-6">
-        <div class="container">
+        <div class=" container-fluid">
+            
+        </div>">
             <h4>BOREALCODE</h4>
 
             <nav class="bg-secondary text-dark text-start">
@@ -156,7 +79,7 @@
     </header>
 
     <div class="bg-secondary text-dark text-center py-5">
-        <div class="container">
+        <div class="container-fluid">
             <h1 class="custom-gray">NEW COLLECTION</h1>
         </div>
     </div>
@@ -169,7 +92,7 @@
 
                 <!-- Primera tarjeta -->
                 <div class="card" style="width: 200px; background-color: #6f7580;">
-                    <img class="card-img-bor" src="imagenes/Camiseta Box Fit Legend - Blanca - S.jpg" alt="card image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
+                    <img class="card-img-top img-fluid" src="imagenes/Camiseta Box Fit Legend - Blanca - S.jpg" alt="card image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
                     <div class="card-body">
                         <h4 class="card-title">Camiseta blanca oversize</h4>
                         <p class="card-text">Camiseta de alta calidad en algodón.</p>
@@ -179,8 +102,8 @@
                 </div>
 
                 <!-- Segunda tarjeta (en el centro) -->
-                <div class="card mx-auto" style="width: 200px;background-color: #6f7580;">
-                    <img class="card-img-bor" src="imagenes/maleoversizedtshirt.jpg" alt="card-image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
+                <div class="card" style="width: 200px;background-color: #6f7580;">
+                    <img class="card-img-top img-fluid" src="imagenes/maleoversizedtshirt.jpg" alt="card-image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
                     <div class="card-body">
                         <h4 class="card-title">Camiseta verde oversize</h4>
                         <p class="card-text">Camiseta de algodón de la más alta calidad.</p>
@@ -191,7 +114,7 @@
 
                 <!-- Tercera tarjeta -->
                 <div class="card" style="width: 200px; background-color: #6f7580;">
-                    <img class="card-img-bor" src="imagenes/Topman Clothing, Shoes & Accessories _ ASOS.jpg" alt="card image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
+                    <img class="card-img-top img-fluid" src="imagenes/Topman Clothing, Shoes & Accessories _ ASOS.jpg" alt="card image" style="box-shadow: 0 4px 8px rgba(0, 0, 0.3);">
                     <div class="card-body">
                         <h4 class="card-title">Camiseta Negra oversize</h4>
                         <p class="card-text">Camiseta de alta calidad en algodón.</p>
@@ -205,7 +128,7 @@
     </section>
 
     <!-- Se enlaza el archivo js al html -->
-    <script src="nebulosa.js"></script>
+    <script src="BOREALCODE.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
