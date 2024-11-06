@@ -1,1 +1,259 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url(/src/assets/imagenes/Boreal.gif);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
+}
+.header {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.main-container {
+width: 100%;
+max-width: 1200px; /* Establece un ancho máximo */
+margin: 0 auto; /* Centra el contenedor */
+}
+.card-container {
+display: flex; /* Establece el contenedor como flex */
+flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias líneas */
+gap: 150px; /* Espacio entre tarjetas */
+justify-content: flex-start;
+}
+.card {
+    flex: 0 1 300px;
+width: 300px; /* Ajusta el ancho de cada tarjeta */
+background-color: #242824;
+border-radius: 6px;
+padding: 10px;
+display: flex;
+flex-direction: column;
+
+}
+
+.card_image {
+width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+height: auto; /* Mantiene la proporción de la imagen */
+border-radius: 4px; /* Redondea las esquinas de la imagen */
+}
+
+.card_form {
+position: absolute; /* Cambia a posición absoluta */
+top: 10px; /* Espacio desde la parte superior */
+left: 10px; /* Espacio desde la izquierda */
+padding: 5px 10px; /* Espaciado interno */
+background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+color: #f1f1f1; /* Color del texto */
+border-radius: 4px; /* Bordes redondeados */
+opacity: 0; /* Oculta por defecto */
+transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.card:hover .card_form {
+opacity: 1; /* Muestra el texto al pasar el mouse */
+}
+
+.card_data {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.card_data span {
+color: #faf9fc;
+display: flex;
+align-items: center;
+font-size: 0.9em;
+transition: 0.2s ease-in-out;  
+opacity: 0; /* Oculta este texto al principio */
+cursor: pointer;
+}
+
+.card:hover .card_data span {
+opacity: 1; /* Muestra este texto al hacer hover sobre la tarjeta */
+}
+
+.text {
+display: flex;
+justify-content: center;
+flex-direction: column;
+color: white;
+}
+
+.text_m {
+font-size: 0.9em;
+}
+
+.text_s {
+color: #f5f4f7;
+font-size: 0.6em;
+}
+
+.cube {
+width: max-content;
+height: 10px;
+transition: all 0.2s;
+transform-style: preserve-3d;
+}
+
+.card:hover .cube {
+transform: rotateX(90deg);
+}
+
+.side {
+width: max-content;
+height: 1em;
+display: flex;
+justify-content: center;
+align-items: center;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+font-weight: bold;
+}
+.button-container {
+display: flex;
+justify-content: flex-end;
+margin-top: 10px; /* Espaciado superior para separar del contenido anterior */
+}
+.button {
+background-color: #f1eff5; /* Color de fondo */
+color: rgb(10, 10, 10); /* Color del texto */
+border: none; /* Sin borde */
+border-radius: 4px; /* Bordes redondeados */
+padding: 10px 20px; /* Espaciado interno */
+font-size: 0.9em; /* Tamaño de fuente */
+cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+transition: background-color 0.3s; /* Transición suave para el color de fondo */
+
+}
+
+.button:hover {
+background-color: #23c260; /* Cambia el color al pasar el mouse */
+}
+.additional-info {
+margin-top: 10px; /* Espaciado superior */
+color: white; /* Color del texto */
+font-size: 0.8em; /* Tamaño de fuente más pequeño */
+}
+
+.additional-info ul {
+list-style-type: disc; /* Estilo de lista */
+margin-left: 20px; /* Sangría para la lista */
+}
+
+
+
+
+
+
+
+
+
+.social-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 25px;
+}
+
+.svg {
+    transition: all 0.3s;
+    padding: 1rem;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    color: rgb(238, 231, 231);
+    fill: currentColor;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+}
+
+.text {
+    opacity: 0;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.3s;
+    color: rgb(19, 18, 18);
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 9999;
+}
+
+.iso-pro {
+    transition: 0.5s;
+    position: relative;
+    overflow: visible;
+}
+
+.iso-pro:hover .svg {
+    transform: translate(5px, -5px);
+}
+
+.iso-pro:hover .text {
+    opacity: 1;
+    transform: translate(25px, -2px) skew(-5deg);
+}
+
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+.navbar-toggler {
+position: relative;
+width: 40px; 
+height: 40px;
+background-color: transparent; 
+border: 2px solid white; 
+border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+display: none; /* Ocultar el icono por defecto */
+}
+
+.navbar-toggler::before,
+.navbar-toggler::after {
+content: '';
+position: absolute;
+left: 50%;
+width: 30px; /* Ancho de las barras */
+height: 4px; /* Grosor de las barras */
+background-color: white; /* Color de las barras */
+transition: all 0.3s ease;
+transform: translateX(-50%); /* Centrar horizontalmente */
+}
+
+.navbar-toggler::before {
+top: 12px; /* Posición de la primera barra */
+}
+
+.navbar-toggler::after {
+top: 24px; /* Posición de la segunda barra */
+}
+
+/* Efecto al abrir/cerrar */
+.navbar-toggler.collapsed::before {
+transform: translateX(-50%) translateY(0) rotate(0); /* Mantener la barra en su posición original */
+}
+
+.navbar-toggler.collapsed::after {
+transform: translateX(-50%) translateY(0) rotate(0); /* Mantener la barra en su posición original */
+}
+
+.navbar-toggler:not(.collapsed)::before {
+transform: translateX(-50%) translateY(6px) rotate(45deg); /* Cambia la primera barra a una 'X' */
+}
+
+.navbar-toggler:not(.collapsed)::after {
+transform: translateX(-50%) translateY(-6px) rotate(-45deg); /* Cambia la segunda barra a una 'X' */
+}
+
+.card-image {
+max-width: 100%; /* La imagen no excederá el ancho del contenedor */
+height: auto; /* Mantiene la proporción de la imagen */
+border-radius: 15px; /* Opcional: aplica esquinas redondeadas a la imagen */
+margin-top: 10px; /* Espaciado superior para separar de otros elementos */
+}
