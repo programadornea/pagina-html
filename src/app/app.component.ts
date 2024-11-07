@@ -11,6 +11,29 @@ import { CommonModule, NgFor } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  images = [
+    {
+      src: '/assets/imagenes/UNDERGOLD-logo.png',
+      hoverSrc: '/assets/imagenes/UNDERGOLD-prom.png',
+      text: `LUMINESCENCE
+      es una colección que retoma el ADN de Undergold, con estampados gráficos en t-shirts y hoodies que presentan una dualidad entre lo celestial y lo futurista. Además de incorporar colores vibrantes que hacen match con la temporada, traemos nuevas prendas oversized con lavados acid wash para hombre y mujer, combinando con la amplia variedad de inferiores que acompañan esta colección.`,
+      alt: 'Primera imagen'
+    },
+    {
+      src: '/assets/imagenes/WEEDGREEN logo.png',
+      hoverSrc: '/assets/imagenes/WEEDGREEN prom.png',
+      text: 'Nuestra tienda en la Zona T es un reflejo de lo que WeedGreen representa: innovación, estilo y conciencia. La decoración moderna y elegante crea un ambiente acogedor que invita a los visitantes a explorar y disfrutar de una experiencia de compra única.',
+      alt: 'Segunda imagen'
+    },
+    {
+      src: '/assets/imagenes/CROWNCODE logo.png',
+      hoverSrc: '/assets/imagenes/CROWNCODE prom.png',
+      text: '"CROWNCODE va más allá de tan solo una marca de ropa, nuestro objetivo es inspirar a los jóvenes con nuestras prendas a que luchen por todos esos sueños que realmente les apasiona y sentirse seguros de sí mismos."',
+      alt: 'Tercera imagen'
+    }
+  ];
+  
   tiendas = [
     {
       nombre: 'Weedgreen',

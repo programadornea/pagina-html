@@ -20,6 +20,38 @@
       </div>
     </nav>
 
+    <!-- Carrusel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li *ngFor="let img of images; let i = index" [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let img of images; let i = index" [class.active]="i === 0">
+          <div class="carousel-item-content position-relative">
+            <!-- Imagen principal -->
+            <img class="main-img d-block w-100" [src]="img.src" [alt]="img.alt">
+            
+            <!-- Imagen y texto que aparecen al hacer hover -->
+            <div class="hover-overlay position-absolute w-100 h-100 top-0 start-0">
+              <img class="hover-img w-100 h-100" [src]="img.hoverSrc" [alt]="img.alt">
+              <div class="hover-text">
+                <h2 class="hover-title">{{ img.text }}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </a>
+    </div>
+
+    <!-- Sección de tiendas -->
     <div class="text-center py-5">
       <h1 class="custom-gray">TIENDAS</h1>
       <div class="main-container">
@@ -50,6 +82,7 @@
         </div>
       </div>
 
+      <!-- Sección de redes sociales -->
       <div class="social-card">
         <div class="iso-pro" *ngFor="let red of redesSociales">
           <a [href]="red.url" target="_blank">
