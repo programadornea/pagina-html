@@ -10,9 +10,7 @@
           <li class="nav-item">
             <a href="/assets/TODASLASTIENDAS.html" class="nav-link text-light mx-3">Todas las tiendas</a>
           </li>
-          <li class="nav-item">
-            <a href="/assets/SALE.html" class="nav-link text-light mx-3">Sale</a>
-          </li>
+          
           <li class="nav-item">
             <a href="/assets/ACERCADENOSOTROS.html" class="nav-link text-light mx-3">Acerca de nosotros</a>
           </li>
@@ -92,6 +90,40 @@
             <span class="text">{{ red.nombre }}</span>
           </a>
         </div>
+      </div>
+    </div>
+    <div *ngIf="isModalVisible" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>Formulario de Contacto</h2>
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <div>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" ngModel required
+              [ngClass]="{'is-invalid': contactForm.controls['name']?.invalid && contactForm.controls['name']?.touched}"
+              pattern="[A-Za-záéíóúÁÉÍÓÚÑñ ]+" title="Solo se permiten letras">
+            <div *ngIf="contactForm.controls['name']?.invalid && contactForm.controls['name']?.touched">
+              <small class="invalid-feedback">El nombre es obligatorio y solo debe contener letras.</small>
+            </div>
+          </div>
+          <div>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" ngModel required
+              [ngClass]="{'is-invalid': contactForm.controls['email']?.invalid && contactForm.controls['email']?.touched}">
+            <div *ngIf="contactForm.controls['email']?.invalid && contactForm.controls['email']?.touched">
+              <small class="invalid-feedback">El correo electrónico es obligatorio y debe tener un formato válido.</small>
+            </div>
+          </div>
+          <div>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" ngModel required
+              [ngClass]="{'is-invalid': contactForm.controls['message']?.invalid && contactForm.controls['message']?.touched}"></textarea>
+            <div *ngIf="contactForm.controls['message']?.invalid && contactForm.controls['message']?.touched">
+              <small class="invalid-feedback">El mensaje es obligatorio.</small>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Enviar</button>
+        </form>
       </div>
     </div>
   </div>

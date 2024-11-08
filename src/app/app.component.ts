@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ReactiveFormsModule , FormGroup, FormBuilder, Validators } from '@angular/forms'; // Importa ReactiveFormsModule
+import { ReactiveFormsModule , FormGroup, FormBuilder, Validators,FormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
 import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule,NgFor,CommonModule],
+  imports: [RouterOutlet, ReactiveFormsModule,NgFor,CommonModule,FormsModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ 
 
   images = [
     {
@@ -109,7 +110,65 @@ export class AppComponent {
   irAlSitio(url: string) {
     window.open(url, '_blank');
   }
+
+  isModalVisible :boolean = true ; // Muestra el modal al iniciar
+
+  // Este método cierra el modal
+  closeModal() {
+    this.isModalVisible = false;
+  }
+
+  name: string = '';
+  email: string = '';
+  message: string = '';
+
+  // Método de envío
+  onSubmit() {
+    if (this.name && this.email && this.message) {
+      if (!this.isValidName(this.name)) {
+        alert('El nombre solo puede contener letras.');
+        return;
+      }
+
+      if (!this.isValidEmail(this.email)) {
+        alert('El correo electrónico no es válido.');
+        return;
+      }
+
+      console.log('Datos del formulario:', {
+        name: this.name,
+        email: this.email,
+        message: this.message
+      });
+
+      alert("Tu información se guardó con éxito");
+      this.resetForm();
+    } else {
+      alert('Por favor completa todos los campos.');
+    }
+  }
+
+  // Reinicia el formulario
+  resetForm() {
+    this.name = '';
+    this.email = '';
+    this.message = '';
+  }
+
+  // Validación del nombre
+  isValidName(name: string): boolean {
+    const namePattern = /^[A-Za-záéíóúÁÉÍÓÚÑñ ]+$/;
+    return namePattern.test(name);
+  }
+
+  // Validación del correo electrónico
+  isValidEmail(email: string): boolean {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
 }
+
+
 
 
 
