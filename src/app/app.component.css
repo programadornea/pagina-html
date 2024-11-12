@@ -11,7 +11,10 @@
   }
   
   .modal-content {
-    background-image: url('/assets/imagenes/Boreal.gif'); /* Corrige la ruta de la imagen */
+    background-image: url('/assets/imagenes/Boreal.gif');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
     background-color: #242222;
     margin: 15% auto;
     padding: 20px;

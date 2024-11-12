@@ -120,11 +120,11 @@ export class AppComponent {
 
   name: string = '';
   email: string = '';
-  message: string = '';
+  
 
   // Método de envío
   onSubmit() {
-    if (this.name && this.email && this.message) {
+    if (this.name && this.email ) {
       if (!this.isValidName(this.name)) {
         alert('El nombre solo puede contener letras.');
         return;
@@ -138,7 +138,7 @@ export class AppComponent {
       console.log('Datos del formulario:', {
         name: this.name,
         email: this.email,
-        message: this.message
+        
       });
 
       alert("Tu información se guardó con éxito");
@@ -152,7 +152,7 @@ export class AppComponent {
   resetForm() {
     this.name = '';
     this.email = '';
-    this.message = '';
+    
   }
 
   // Validación del nombre
