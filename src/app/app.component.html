@@ -114,14 +114,7 @@
               <small class="invalid-feedback">El correo electrónico es obligatorio y debe tener un formato válido.</small>
             </div>
           </div>
-          <div>
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" ngModel required
-              [ngClass]="{'is-invalid': contactForm.controls['message']?.invalid && contactForm.controls['message']?.touched}"></textarea>
-            <div *ngIf="contactForm.controls['message']?.invalid && contactForm.controls['message']?.touched">
-              <small class="invalid-feedback">El mensaje es obligatorio.</small>
-            </div>
-          </div>
+          
           <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Enviar</button>
         </form>
       </div>
