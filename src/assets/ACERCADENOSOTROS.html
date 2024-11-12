@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>BOREALCODE - TIENDA DE ROPA</title>
-    <link rel="icon" type="image/x-icon" href="Imagenes/BC.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/imagenes/BC.ico">
     <link rel="stylesheet" href="./background-image.css">
 
     <style>
@@ -18,8 +18,94 @@
             min-height: 100vh;
             color: white;
         }
+        .text-center{
+            text-align: center;
+        }
+        .social-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 25px;
+    }
+    
+    .svg {
+        transition: all 0.3s;
+        padding: 1rem;
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        color: rgb(238, 231, 231);
+        fill: currentColor;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+    }
+    
+    .text {
+        opacity: 0;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.3s;
+        color: rgb(19, 18, 18);
+        background-color: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        z-index: 9999;
+    }
+    
+    .iso-pro {
+        transition: 0.5s;
+        position: relative;
+        overflow: visible;
+    }
+    
+    .iso-pro:hover .svg {
+        transform: translate(5px, -5px);
+    }
+    
+    .iso-pro:hover .text {
+        opacity: 1;
+        transform: translate(25px, -2px) skew(-5deg);
+    }
+    
+    @media (min-width: 992px) {
+        .navbar-toggler {
+            display: none;
+        }
+    }
+        
     </style>
 
 </head>
+<body>
+    <div class="text-center py-5">
+      <div class="container-fluid">
+        <div class="text-center">
+        <h1>BOREALCODE</h1>
+        <h3>BOREALCODE es una plataforma dedicada a impulsar la visibilidad de las marcas colombianas más destacadas y de aquellas que están emergiendo en el ámbito del streetwear. Nuestra misión es conectar a los consumidores con marcas que representan lo mejor de la moda urbana, destacando la creatividad y la autenticidad de emprendedores locales. Con un enfoque claro en apoyar a los nuevos talentos y a las empresas en crecimiento, ofrecemos un espacio donde las pequeñas y medianas marcas pueden alcanzar su máximo potencial y llegar a una audiencia apasionada por el estilo y la innovación. Nos esforzamos en ser el puente entre el público y las tendencias en evolución, creando una comunidad que respalda el esfuerzo y el talento de nuestros emprendedores</h3>
+        <div class="card">
 
+        </div>
+      </div>
+        <img src="/assets/imagenes/Image.jpg" alt="card-image" class="card-image">
+      </div>
+    </div>
+    <div class="social-card">
+        <div class="iso-pro">
+            <a href="https://www.facebook.com" target="_blank">
+                <svg class="svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.675 0h-21.35C.601 0 0 .601 0 1.325v21.35C0 23.399.601 24 1.325 24h21.35C23.399 24 24 23.399 24 22.675V1.325C24 .601 23.399 0 22.675 0zm-3.05 12.163h-3.654v9.223h-4.055v-9.223h-2.79V8.653h2.79V6.566c0-3.325 1.919-5.142 4.822-5.142 1.42 0 2.638.105 2.995.151v3.472h-2.002c-1.571 0-1.88.747-1.88 1.835v2.402h3.754l-.489 3.51z"></path>
+                </svg>
+                <span class="text">Facebook</span>
+            </a>
+        </div>
+        
+        <div class="iso-pro">
+            <a href="https://www.instagram.com" target="_blank">
+                <svg class="svg" viewBox="0 0 30 30" fill="currentColor" >
+                    <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"/>
+                </svg>
+                <span class="text">Instagram</span>
+            </a>
+        </div>
+    </div>
+  </body>
 </html>
